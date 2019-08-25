@@ -103,25 +103,23 @@
     <a name="clabelfont" val="SansSerif plain 12"/>
     <wire from="(150,450)" to="(180,450)"/>
     <wire from="(170,70)" to="(200,70)"/>
-    <wire from="(730,320)" to="(730,430)"/>
-    <wire from="(710,430)" to="(730,430)"/>
+    <wire from="(500,250)" to="(590,250)"/>
+    <wire from="(590,430)" to="(610,430)"/>
     <wire from="(320,450)" to="(350,450)"/>
-    <wire from="(550,250)" to="(710,250)"/>
+    <wire from="(610,320)" to="(610,430)"/>
     <wire from="(150,90)" to="(150,450)"/>
     <wire from="(150,90)" to="(200,90)"/>
-    <wire from="(770,260)" to="(830,260)"/>
-    <wire from="(730,100)" to="(800,100)"/>
-    <wire from="(240,80)" to="(800,80)"/>
+    <wire from="(650,260)" to="(710,260)"/>
+    <wire from="(710,170)" to="(710,260)"/>
     <wire from="(140,450)" to="(150,450)"/>
-    <wire from="(830,170)" to="(830,260)"/>
-    <wire from="(770,280)" to="(870,280)"/>
-    <wire from="(470,310)" to="(710,310)"/>
-    <wire from="(550,170)" to="(550,250)"/>
+    <wire from="(350,310)" to="(590,310)"/>
+    <wire from="(370,430)" to="(450,430)"/>
+    <wire from="(240,80)" to="(570,80)"/>
+    <wire from="(650,280)" to="(750,280)"/>
     <wire from="(80,500)" to="(120,500)"/>
     <wire from="(120,470)" to="(120,500)"/>
-    <wire from="(370,430)" to="(570,430)"/>
-    <wire from="(470,190)" to="(470,310)"/>
-    <comp lib="4" loc="(710,430)" name="ROM">
+    <wire from="(500,100)" to="(570,100)"/>
+    <comp lib="4" loc="(590,430)" name="ROM">
       <a name="addrWidth" val="4"/>
       <a name="dataWidth" val="4"/>
       <a name="contents">addr/data: 4 4
@@ -129,14 +127,11 @@ f 6 6 2 6 2 2 2
 1 8 9 6 1 0 1
 </a>
     </comp>
-    <comp lib="7" loc="(740,280)" name="MIPS ALU 4-bit"/>
+    <comp loc="(450,200)" name="Registers"/>
     <comp lib="0" loc="(170,70)" name="Constant">
       <a name="width" val="8"/>
     </comp>
-    <comp lib="6" loc="(781,234)" name="Text">
-      <a name="text" val="branching"/>
-    </comp>
-    <comp lib="3" loc="(840,90)" name="Adder"/>
+    <comp lib="7" loc="(620,280)" name="MIPS ALU 4-bit"/>
     <comp lib="4" loc="(320,450)" name="ROM">
       <a name="dataWidth" val="20"/>
       <a name="contents">addr/data: 8 20
@@ -168,6 +163,10 @@ f 6 6 2 6 2 2 2
       <a name="bit19" val="0"/>
     </comp>
     <comp lib="3" loc="(240,80)" name="Adder"/>
+    <comp lib="6" loc="(661,234)" name="Text">
+      <a name="text" val="branching"/>
+    </comp>
+    <comp lib="3" loc="(610,90)" name="Adder"/>
     <comp lib="4" loc="(140,450)" name="Register"/>
   </circuit>
   <circuit name="ALU">
@@ -276,11 +275,12 @@ f 6 6 2 6 2 2 2
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="80" y="97">DATA IN</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="123" y="169">CLK</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="110" y="71">REGISTERS</text>
-      <circ-port height="8" pin="100,210" width="8" x="46" y="56"/>
-      <circ-port height="10" pin="900,320" width="10" x="165" y="55"/>
-      <circ-port height="8" pin="100,370" width="8" x="46" y="66"/>
-      <circ-port height="8" pin="80,590" width="8" x="46" y="76"/>
-      <circ-port height="8" pin="90,750" width="8" x="46" y="86"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="79" y="120">regWrite</text>
+      <circ-port height="8" pin="100,210" width="8" x="106" y="166"/>
+      <circ-port height="10" pin="900,320" width="10" x="165" y="115"/>
+      <circ-port height="8" pin="100,370" width="8" x="46" y="86"/>
+      <circ-port height="8" pin="80,590" width="8" x="46" y="116"/>
+      <circ-port height="8" pin="90,750" width="8" x="46" y="136"/>
       <circ-anchor facing="east" height="6" width="6" x="167" y="117"/>
     </appear>
     <wire from="(700,300)" to="(700,310)"/>
