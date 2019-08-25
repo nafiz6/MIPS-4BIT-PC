@@ -100,42 +100,104 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <wire from="(860,70)" to="(920,70)"/>
-    <wire from="(470,170)" to="(470,310)"/>
-    <wire from="(150,90)" to="(200,90)"/>
-    <wire from="(770,260)" to="(830,260)"/>
-    <wire from="(60,450)" to="(110,450)"/>
-    <wire from="(710,50)" to="(710,80)"/>
-    <wire from="(830,170)" to="(830,260)"/>
-    <wire from="(950,80)" to="(990,80)"/>
-    <wire from="(770,280)" to="(870,280)"/>
-    <wire from="(470,310)" to="(710,310)"/>
-    <wire from="(550,170)" to="(550,250)"/>
-    <wire from="(80,500)" to="(120,500)"/>
-    <wire from="(860,50)" to="(860,70)"/>
-    <wire from="(120,470)" to="(120,500)"/>
-    <wire from="(60,20)" to="(990,20)"/>
-    <wire from="(150,450)" to="(180,450)"/>
-    <wire from="(170,70)" to="(200,70)"/>
-    <wire from="(710,50)" to="(860,50)"/>
-    <wire from="(730,320)" to="(730,430)"/>
-    <wire from="(710,430)" to="(730,430)"/>
-    <wire from="(930,100)" to="(930,140)"/>
-    <wire from="(320,450)" to="(350,450)"/>
-    <wire from="(550,250)" to="(710,250)"/>
-    <wire from="(240,80)" to="(710,80)"/>
-    <wire from="(150,90)" to="(150,450)"/>
-    <wire from="(710,80)" to="(800,80)"/>
-    <wire from="(60,20)" to="(60,450)"/>
-    <wire from="(730,100)" to="(800,100)"/>
-    <wire from="(990,20)" to="(990,80)"/>
-    <wire from="(140,450)" to="(150,450)"/>
-    <wire from="(840,90)" to="(920,90)"/>
-    <wire from="(370,430)" to="(570,430)"/>
-    <comp lib="0" loc="(170,70)" name="Constant">
+    <wire from="(100,230)" to="(1250,230)"/>
+    <wire from="(970,350)" to="(1020,350)"/>
+    <wire from="(1200,290)" to="(1200,370)"/>
+    <wire from="(750,260)" to="(1190,260)"/>
+    <wire from="(1090,350)" to="(1090,370)"/>
+    <wire from="(1250,210)" to="(1250,230)"/>
+    <wire from="(1220,270)" to="(1260,270)"/>
+    <wire from="(100,660)" to="(150,660)"/>
+    <wire from="(810,490)" to="(910,490)"/>
+    <wire from="(970,350)" to="(970,380)"/>
+    <wire from="(590,380)" to="(590,460)"/>
+    <wire from="(120,710)" to="(160,710)"/>
+    <wire from="(160,680)" to="(160,710)"/>
+    <wire from="(870,360)" to="(870,470)"/>
+    <wire from="(1000,390)" to="(1020,390)"/>
+    <wire from="(1250,210)" to="(1260,210)"/>
+    <wire from="(750,640)" to="(770,640)"/>
+    <wire from="(360,660)" to="(390,660)"/>
+    <wire from="(880,300)" to="(1030,300)"/>
+    <wire from="(890,450)" to="(1040,450)"/>
+    <wire from="(590,460)" to="(750,460)"/>
+    <wire from="(190,300)" to="(190,660)"/>
+    <wire from="(280,290)" to="(750,290)"/>
+    <wire from="(1030,280)" to="(1190,280)"/>
+    <wire from="(1120,420)" to="(1250,420)"/>
+    <wire from="(180,660)" to="(190,660)"/>
+    <wire from="(960,380)" to="(970,380)"/>
+    <wire from="(1180,370)" to="(1200,370)"/>
+    <wire from="(810,470)" to="(870,470)"/>
+    <wire from="(1090,350)" to="(1130,350)"/>
+    <wire from="(510,380)" to="(510,520)"/>
+    <wire from="(190,300)" to="(240,300)"/>
+    <wire from="(1120,390)" to="(1120,420)"/>
+    <wire from="(1000,390)" to="(1000,420)"/>
+    <wire from="(750,260)" to="(750,290)"/>
+    <wire from="(510,520)" to="(750,520)"/>
+    <wire from="(1030,280)" to="(1030,300)"/>
+    <wire from="(190,660)" to="(220,660)"/>
+    <wire from="(210,280)" to="(240,280)"/>
+    <wire from="(770,530)" to="(770,640)"/>
+    <wire from="(1120,390)" to="(1130,390)"/>
+    <wire from="(750,290)" to="(840,290)"/>
+    <wire from="(100,230)" to="(100,660)"/>
+    <wire from="(870,360)" to="(900,360)"/>
+    <wire from="(1260,210)" to="(1260,270)"/>
+    <wire from="(770,310)" to="(840,310)"/>
+    <wire from="(1000,420)" to="(1070,420)"/>
+    <wire from="(890,400)" to="(900,400)"/>
+    <wire from="(1070,370)" to="(1090,370)"/>
+    <wire from="(410,640)" to="(610,640)"/>
+    <wire from="(890,400)" to="(890,450)"/>
+    <comp lib="4" loc="(750,640)" name="ROM">
+      <a name="addrWidth" val="4"/>
+      <a name="dataWidth" val="4"/>
+      <a name="contents">addr/data: 4 4
+0
+</a>
+    </comp>
+    <comp lib="6" loc="(1094,415)" name="Text">
+      <a name="text" val="jmp"/>
+    </comp>
+    <comp lib="3" loc="(880,300)" name="Adder"/>
+    <comp lib="2" loc="(1220,270)" name="Multiplexer">
       <a name="width" val="8"/>
     </comp>
-    <comp lib="0" loc="(350,450)" name="Splitter">
+    <comp lib="0" loc="(210,280)" name="Constant">
+      <a name="width" val="8"/>
+    </comp>
+    <comp lib="1" loc="(1070,370)" name="OR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="6" loc="(1086,462)" name="Text">
+      <a name="text" val="IF BEQ then 1  if bneq then 0 "/>
+    </comp>
+    <comp lib="1" loc="(960,380)" name="XOR Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="7" loc="(780,490)" name="MIPS ALU"/>
+    <comp lib="1" loc="(1180,370)" name="AND Gate">
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="4" loc="(180,660)" name="Register"/>
+    <comp lib="4" loc="(360,660)" name="ROM">
+      <a name="dataWidth" val="20"/>
+      <a name="contents">addr/data: 8 20
+0
+</a>
+    </comp>
+    <comp lib="6" loc="(821,444)" name="Text">
+      <a name="text" val="branching"/>
+    </comp>
+    <comp lib="6" loc="(750,321)" name="Text">
+      <a name="text" val="jump magnitude"/>
+    </comp>
+    <comp lib="6" loc="(1275,442)" name="Text">
+      <a name="text" val="jmp/beq/bneq"/>
+    </comp>
+    <comp lib="0" loc="(390,660)" name="Splitter">
       <a name="fanout" val="4"/>
       <a name="incoming" val="20"/>
       <a name="appear" val="center"/>
@@ -159,29 +221,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit18" val="0"/>
       <a name="bit19" val="0"/>
     </comp>
-    <comp lib="4" loc="(140,450)" name="Register"/>
-    <comp lib="3" loc="(240,80)" name="Adder"/>
-    <comp lib="2" loc="(950,80)" name="Multiplexer">
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="7" loc="(740,280)" name="MIPS ALU"/>
-    <comp lib="6" loc="(781,234)" name="Text">
-      <a name="text" val="branching"/>
-    </comp>
-    <comp lib="4" loc="(710,430)" name="ROM">
-      <a name="addrWidth" val="4"/>
-      <a name="dataWidth" val="4"/>
-      <a name="contents">addr/data: 4 4
-0
-</a>
-    </comp>
-    <comp lib="3" loc="(840,90)" name="Adder"/>
-    <comp lib="4" loc="(320,450)" name="ROM">
-      <a name="dataWidth" val="20"/>
-      <a name="contents">addr/data: 8 20
-0
-</a>
-    </comp>
+    <comp lib="3" loc="(280,290)" name="Adder"/>
   </circuit>
   <circuit name="ALU">
     <a name="circuit" val="ALU"/>
