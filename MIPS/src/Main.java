@@ -16,7 +16,8 @@ class MIPSConverter
         {
             if(s.equals(instructions[i]))
             {
-                return convertToBin(i,4);
+                //return convertToBin(i,4);
+                return HEX(i,0);
             }
         }
         return null;
@@ -24,14 +25,15 @@ class MIPSConverter
 
     public String getRegister(String s)
     {
-        if(s.equals("$zero")) return "1111";
+        if(s.equals("$zero")) return "F";
         else
         {
             for(int i=0; i<5; i++)
             {
                 if(s.equals(registers[i]))
                 {
-                    return convertToBin(i,4);
+                    //return convertToBin(i,4);
+                    return HEX(i,0);
                 }
             }
         }
@@ -53,6 +55,27 @@ class MIPSConverter
         return code;
     }
 
+    public String HEX(int i,int type)
+    {
+        if(type == 0) {
+            String code = Integer.toHexString(i);
+            return code;
+        }
+        else
+        {
+            if(i<16)
+            {
+                String code = "0" + Integer.toHexString(i);
+                return code;
+            }
+            else
+            {
+                String code = Integer.toHexString(i);
+                return code;
+            }
+        }
+    }
+
     public String convert(String S)
     {
         String code = "";
@@ -66,7 +89,8 @@ class MIPSConverter
         if(s.equals(instructions[0]))
         {
             //J
-            code = code + getOpCode(s) + convertToBin(Integer.parseInt(inst),8) + "00000000";
+
+            code = code + getOpCode(s) + HEX(Integer.parseInt(inst),1) + "00";
             return code;
 
         }
@@ -74,14 +98,14 @@ class MIPSConverter
         {
             //BEQ
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[0]) + getRegister(reg[1]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[0]) + getRegister(reg[1]) + HEX(Integer.parseInt(reg[2]),1);
             return code;
         }
         else if(s.equals(instructions[2]))
         {
             //SUBI
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),1) ;
             return code;
 
         }
@@ -89,7 +113,7 @@ class MIPSConverter
         {
             //ADDI
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),1) ;
             return code;
 
         }
@@ -97,14 +121,14 @@ class MIPSConverter
         {
             //SUB
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0000";
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0";
             return code;
         }
         else if(s.equals(instructions[5]))
         {
             //ADD
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0000";
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0";
             return code;
         }
         else if(s.equals(instructions[6]))
@@ -114,7 +138,7 @@ class MIPSConverter
             inst = inst.replace(')',',');
             String [] reg = inst.split(",");
 
-            code = code + getOpCode(s) + getRegister(reg[2]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[1]),8);
+            code = code + getOpCode(s) + getRegister(reg[2]) + getRegister(reg[0]) +  HEX(Integer.parseInt(reg[1]),1) ;
             return code;
 
         }
@@ -125,7 +149,7 @@ class MIPSConverter
             inst = inst.replace(')',',');
             String [] reg = inst.split(",");
 
-            code = code + getOpCode(s) + getRegister(reg[2]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[1]),8);
+            code = code + getOpCode(s) + getRegister(reg[2]) + getRegister(reg[0]) + HEX(Integer.parseInt(reg[1]),1) ;
             return code;
 
         }
@@ -133,7 +157,7 @@ class MIPSConverter
         {
             //ORI
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),1) ;
             return code;
 
         }
@@ -141,49 +165,49 @@ class MIPSConverter
         {
             //SLL
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + "0000" + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),4);
+            code = code + getOpCode(s) + getRegister(reg[1]) + "0" + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),0) ;
             return code;
         }
         else if(s.equals(instructions[10]))
         {
             //SRL
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + "0000" + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),4);
+            code = code + getOpCode(s) + getRegister(reg[1]) + "0" + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),0) ;
             return code;
         }
         else if(s.equals(instructions[11]))
         {
             //BNE
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[0]) + getRegister(reg[1]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[0]) + getRegister(reg[1]) + HEX(Integer.parseInt(reg[2]),1) ;
             return code;
         }
         else if(s.equals(instructions[12]))
         {
             //NOR
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0000";
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0";
             return code;
         }
         else if(s.equals(instructions[13]))
         {
             //AND
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0000";
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0";
             return code;
         }
         else if(s.equals(instructions[14]))
         {
             //OR
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0000";
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[2]) + getRegister(reg[0]) + "0";
             return code;
         }
         else if(s.equals(instructions[15]))
         {
             //ANDI
             String [] reg = inst.split(",");
-            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + convertToBin(Integer.parseInt(reg[2]),8);
+            code = code + getOpCode(s) + getRegister(reg[1]) + getRegister(reg[0]) + HEX(Integer.parseInt(reg[2]),1) ;
             return code;
         }
 
