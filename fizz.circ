@@ -469,13 +469,16 @@ f 6 6 2 6 2 2 2
     <wire from="(210,360)" to="(460,360)"/>
     <wire from="(360,640)" to="(550,640)"/>
     <wire from="(230,500)" to="(290,500)"/>
+    <wire from="(580,740)" to="(630,740)"/>
     <wire from="(210,330)" to="(210,340)"/>
+    <wire from="(210,370)" to="(210,380)"/>
     <wire from="(820,170)" to="(820,240)"/>
     <wire from="(440,380)" to="(560,380)"/>
     <wire from="(690,310)" to="(690,720)"/>
     <wire from="(590,310)" to="(690,310)"/>
     <wire from="(580,420)" to="(680,420)"/>
     <wire from="(930,780)" to="(970,780)"/>
+    <wire from="(560,760)" to="(560,790)"/>
     <wire from="(780,260)" to="(880,260)"/>
     <wire from="(310,510)" to="(310,540)"/>
     <wire from="(200,690)" to="(240,690)"/>
@@ -486,6 +489,7 @@ f 6 6 2 6 2 2 2
     <wire from="(590,590)" to="(590,630)"/>
     <wire from="(210,670)" to="(240,670)"/>
     <wire from="(390,370)" to="(390,530)"/>
+    <wire from="(390,740)" to="(550,740)"/>
     <wire from="(240,690)" to="(900,690)"/>
     <wire from="(210,350)" to="(480,350)"/>
     <wire from="(280,260)" to="(550,260)"/>
@@ -503,6 +507,7 @@ f 6 6 2 6 2 2 2
     <wire from="(920,320)" to="(980,320)"/>
     <wire from="(230,480)" to="(280,480)"/>
     <wire from="(660,590)" to="(660,850)"/>
+    <wire from="(440,790)" to="(560,790)"/>
     <wire from="(480,330)" to="(480,350)"/>
     <wire from="(560,650)" to="(560,680)"/>
     <wire from="(280,260)" to="(280,480)"/>
@@ -517,9 +522,11 @@ f 6 6 2 6 2 2 2
     <wire from="(160,550)" to="(190,550)"/>
     <wire from="(560,170)" to="(710,170)"/>
     <wire from="(160,810)" to="(640,810)"/>
+    <wire from="(440,680)" to="(440,790)"/>
     <wire from="(520,630)" to="(550,630)"/>
     <wire from="(690,310)" to="(780,310)"/>
     <wire from="(670,740)" to="(890,740)"/>
+    <wire from="(380,570)" to="(380,750)"/>
     <wire from="(590,590)" to="(660,590)"/>
     <wire from="(300,430)" to="(300,490)"/>
     <wire from="(230,620)" to="(360,620)"/>
@@ -549,11 +556,15 @@ f 6 6 2 6 2 2 2
     <wire from="(680,730)" to="(890,730)"/>
     <wire from="(410,170)" to="(410,330)"/>
     <wire from="(440,570)" to="(440,680)"/>
+    <wire from="(230,570)" to="(380,570)"/>
     <wire from="(210,630)" to="(210,670)"/>
     <wire from="(180,750)" to="(200,750)"/>
     <wire from="(900,400)" to="(900,690)"/>
+    <wire from="(380,560)" to="(390,560)"/>
+    <wire from="(380,380)" to="(380,560)"/>
     <wire from="(230,510)" to="(310,510)"/>
     <wire from="(670,510)" to="(800,510)"/>
+    <wire from="(630,800)" to="(890,800)"/>
     <wire from="(590,510)" to="(670,510)"/>
     <wire from="(460,360)" to="(460,420)"/>
     <wire from="(680,420)" to="(680,730)"/>
@@ -564,7 +575,9 @@ f 6 6 2 6 2 2 2
     <wire from="(440,290)" to="(560,290)"/>
     <wire from="(440,570)" to="(560,570)"/>
     <wire from="(210,370)" to="(390,370)"/>
+    <wire from="(380,750)" to="(550,750)"/>
     <wire from="(310,540)" to="(550,540)"/>
+    <wire from="(210,380)" to="(380,380)"/>
     <wire from="(560,350)" to="(560,380)"/>
     <wire from="(780,250)" to="(880,250)"/>
     <wire from="(240,670)" to="(240,690)"/>
@@ -582,12 +595,15 @@ f 6 6 2 6 2 2 2
     <wire from="(800,280)" to="(800,510)"/>
     <wire from="(670,510)" to="(670,740)"/>
     <wire from="(690,720)" to="(890,720)"/>
+    <wire from="(390,560)" to="(390,740)"/>
+    <wire from="(630,740)" to="(630,800)"/>
     <wire from="(810,390)" to="(880,390)"/>
     <wire from="(230,490)" to="(300,490)"/>
     <wire from="(580,330)" to="(590,330)"/>
     <wire from="(580,250)" to="(590,250)"/>
     <wire from="(580,530)" to="(590,530)"/>
     <comp lib="4" loc="(580,250)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="t1"/>
     </comp>
     <comp lib="2" loc="(190,550)" name="Demultiplexer">
@@ -599,6 +615,7 @@ f 6 6 2 6 2 2 2
       <a name="label" val="addressA   R/W"/>
     </comp>
     <comp lib="4" loc="(580,420)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="t3"/>
     </comp>
     <comp lib="0" loc="(980,320)" name="Pin">
@@ -610,9 +627,11 @@ f 6 6 2 6 2 2 2
       <a name="labelloc" val="south"/>
     </comp>
     <comp lib="4" loc="(560,170)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="t0"/>
     </comp>
     <comp lib="4" loc="(580,630)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="ZERO"/>
     </comp>
     <comp lib="0" loc="(970,780)" name="Pin">
@@ -626,6 +645,10 @@ f 6 6 2 6 2 2 2
     <comp lib="2" loc="(930,780)" name="Multiplexer">
       <a name="select" val="4"/>
       <a name="width" val="8"/>
+    </comp>
+    <comp lib="4" loc="(580,740)" name="Register">
+      <a name="trigger" val="falling"/>
+      <a name="label" val="SP"/>
     </comp>
     <comp lib="2" loc="(920,320)" name="Multiplexer">
       <a name="select" val="4"/>
@@ -642,6 +665,7 @@ f 6 6 2 6 2 2 2
       <a name="label" val="clock"/>
     </comp>
     <comp lib="4" loc="(580,530)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="t4"/>
     </comp>
     <comp lib="0" loc="(160,550)" name="Pin">
@@ -653,6 +677,7 @@ f 6 6 2 6 2 2 2
       <a name="value" val="0x0"/>
     </comp>
     <comp lib="4" loc="(580,330)" name="Register">
+      <a name="trigger" val="falling"/>
       <a name="label" val="t2"/>
     </comp>
     <comp lib="0" loc="(180,370)" name="Pin">
