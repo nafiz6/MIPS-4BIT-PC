@@ -11,6 +11,3 @@ srl $t1,$t2,8
 nor $t1,$t2,$t3
 lw $t1,10($t2)
 sw $t2,5($t1)
-j 13
-beq $t1,$zero,12
-bne $t1,$t2,15
