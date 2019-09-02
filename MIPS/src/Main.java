@@ -230,7 +230,11 @@ public class Main {
             while(true)
             {
                 String s = br.readLine();
-                if (s==null)break;
+                if (s==null) {
+
+                    break;
+                }
+
                 s = C.convert(s);
                 System.out.print(count + ". ");
                 System.out.println(s);
