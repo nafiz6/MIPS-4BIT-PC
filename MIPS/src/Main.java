@@ -26,6 +26,7 @@ class MIPSConverter
     public String getRegister(String s)
     {
         if(s.equals("$zero")) return "F";
+        else if(s.equals("$sp")) return "A";
         else
         {
             for(int i=0; i<5; i++)
@@ -86,7 +87,7 @@ class MIPSConverter
         for (int i=1; i<input.length; i++)
             inst = inst + input[i];
 
-        if(s.equals(instructions[0]))
+        if(s.equalsIgnoreCase(instructions[0]))
         {
             //J
 
@@ -236,7 +237,7 @@ public class Main {
                 }
 
                 s = C.convert(s);
-                System.out.print(count + ". ");
+               System.out.print(count + ". ");
                 System.out.println(s);
                 count++;
                 bw.write(s);
