@@ -230,7 +230,7 @@ public class Main {
             BufferedWriter bw = new BufferedWriter(new FileWriter(output));
 
             //Initializing stack pointer
-            String init = "addi $sp,$sp,10";
+            String init = "addi $sp,$zero,255";
             init = C.convert(init);
             bw.write(init);
             bw.newLine();
