@@ -228,6 +228,13 @@ public class Main {
         try {
             BufferedReader br = new BufferedReader(new FileReader(input));
             BufferedWriter bw = new BufferedWriter(new FileWriter(output));
+
+            //Initializing stack pointer
+            String init = "addi $sp,$sp,10";
+            init = C.convert(init);
+            bw.write(init);
+            bw.newLine();
+
             while(true)
             {
                 String s = br.readLine();
@@ -237,7 +244,7 @@ public class Main {
                 }
 
                 s = C.convert(s);
-               System.out.print(count + ". ");
+                System.out.print(count + ". ");
                 System.out.println(s);
                 count++;
                 bw.write(s);
